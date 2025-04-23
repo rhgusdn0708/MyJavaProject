@@ -1,8 +1,8 @@
 package workshop.book.control;
 
-import workshop.book.entity.Publication;
 import workshop.book.entity.Magazine;
 import workshop.book.entity.Novel;
+import workshop.book.entity.Publication;
 
 public class ManageBook {
 
