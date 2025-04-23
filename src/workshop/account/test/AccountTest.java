@@ -2,6 +2,7 @@ package workshop.account.test;
 
 //ctrl + shift + o
 import workshop.account.entity.Account;
+import workshop.account.exception.InsufficientBalanceException;
 
 public class AccountTest {
 	public static void main(String[] args) {
@@ -18,11 +19,17 @@ public class AccountTest {
 		
 		//Ãâ±Ý
 		System.out.println("20000¿øÃâ±Ý");
-		account.withdraw(20000);
-		System.out.println("ÀÜ¾×:" + account.getBalance());
-		
-		account.withdraw(100000);
-		System.out.println("ÀÜ¾×:" + account.getBalance());
+		try {
+			account.withdraw(20000);
+			System.out.println("ÀÜ¾×:" + account.getBalance());
+			
+			account.withdraw(100000);
+			System.out.println("ÀÜ¾×:" + account.getBalance());
+			
+		} catch (InsufficientBalanceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	

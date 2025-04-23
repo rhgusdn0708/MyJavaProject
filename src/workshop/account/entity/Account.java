@@ -1,5 +1,7 @@
 package workshop.account.entity;
 
+import workshop.account.exception.InsufficientBalanceException;
+
 public class Account extends Object {
 	private String custId;
 	private String acctId;
@@ -9,13 +11,13 @@ public class Account extends Object {
 	public Account() {
 		System.out.println("Default Constructor Called..");
 	}
-	//Constructor Overloading(생성사 중복정의)
+	//Constructor Overloading( 생성자 중복정의 )
 	public Account(String custId, String acctId, int balance) {
 		this.custId = custId;
 		this.acctId = acctId;
 		this.balance = balance;
-	}	
-	
+	}
+
 	//setter
 	public void setCustId(String custId) {
 		this.custId = custId;
@@ -38,24 +40,27 @@ public class Account extends Object {
 		return acctId;
 	}
 	
-	//입금
+	//입금 
 	public void deposit(int amount) {
 		this.balance += amount;
 	}
 	//출금
-	public void withdraw(int amount) {
+	public void withdraw(int amount) throws InsufficientBalanceException{
 		if(amount > balance) {
 			System.out.println("잔액부족");
 		}
 		this.balance -= amount;
 	}
 	
-	//부모 클래스가 가진 Object 의 toString() 매서드를 재정의(Overriding)
+	//부모 클래스가 가진 Object의 toString() 메서드를 재정의(Overriding)
 	//Method Signature public String toString()
-	//@Override
+	@Override
 	public String toString() {
-		return "Account [custId=" + custId + ", acctId=" + acctId + ", balance=" + balance + "]";
+		return "Account [custId=" + custId + ", "
+				+ "acctId=" + acctId 
+				+ ", balance=" + balance + "]";
 	}
 	
+
 	
 }
