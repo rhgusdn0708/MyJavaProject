@@ -50,4 +50,12 @@ public class Account extends Object {
 		this.balance -= amount;
 	}
 	
+	//부모 클래스가 가진 Object 의 toString() 매서드를 재정의(Overriding)
+	//Method Signature public String toString()
+	//@Override
+	public String toString() {
+		return "Account [custId=" + custId + ", acctId=" + acctId + ", balance=" + balance + "]";
+	}
+	
+	
 }
