@@ -34,7 +34,7 @@ public class Account {
 	//출금
 	public void withdraw(int amount) {
 		if(amount > balance) {
-			System.out.println("ÀÜ¾×ºÎÁ·");
+			System.out.println("잔액부족");
 		}
 		this.balance -= amount;
 	}
