@@ -56,7 +56,6 @@ public class Student {
     public static void main(String[] args) {
         Student student = new Student("20250001", "김민수", "컴퓨터공학", 2);
         student.printInfo();
-
         student.setGrade(5); // 잘못된 입력 테스트
         student.printInfo();
     }
